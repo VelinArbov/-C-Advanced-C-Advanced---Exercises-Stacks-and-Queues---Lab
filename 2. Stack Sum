@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ADVANCED___STACKS_AND_QUEUES
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] numbers = Console.ReadLine().Split(" ").Select(int.Parse).ToArray();
+            Stack<int> stack = new Stack<int>();
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                stack.Push(numbers[i]);
+            }
+            while (true)
+            {
+                string[] input = Console.ReadLine().Split(" ").ToArray();
+                string command = input[0].ToLower();
+                if( command == "end")
+                {
+                    break;
+                }
+                if ( command =="add")
+                {
+                    stack.Push(int.Parse(input[1]));
+                    stack.Push(int.Parse(input[2]));
+                }
+                else if (command == "remove")
+                {
+
+                    if ( stack.Count >= int.Parse(input[1]))
+                    {
+                        for (int i = 0; i < int.Parse(input[1]); i++)
+                        {
+                            stack.Pop();
+                        }
+
+
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+
+                }
+
+
+
+            }
+            Console.WriteLine($"Sum: {stack.Sum()}");
+        }
+    }
+}
