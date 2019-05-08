@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ADVANCED___STACKS_AND_QUEUES
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int result = 0;
+            string[] stringove = Console.ReadLine().Split(" ").ToArray();
+            Stack<string> numbersAndOperators = new Stack<string>();
+            for (int i = stringove.Length - 1; i >= 0; i--)
+            {
+                string currentString = stringove[i];
+                numbersAndOperators.Push(currentString);
+
+
+            }
+            result += int.Parse(numbersAndOperators.Pop());
+            while ( numbersAndOperators.Count != 0)
+            {
+                string curretnString = numbersAndOperators.Peek();
+              if ( curretnString.Contains('+'))
+                {
+                    numbersAndOperators.Pop();
+                    result += int.Parse(numbersAndOperators.Pop());
+                }
+                else if ( curretnString.Contains('-'))
+                {
+                    numbersAndOperators.Pop();
+                    result -= int.Parse(numbersAndOperators.Pop());
+                }
+
+
+
+
+            }
+            Console.WriteLine(result);
+
+
+
+
+
+            
+        }
+    }
+}
