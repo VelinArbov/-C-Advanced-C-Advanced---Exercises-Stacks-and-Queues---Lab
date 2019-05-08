@@ -1,0 +1,19 @@
+using System;
+using System.Collections.Generic;
+namespace ADVANCED___STACKS_AND_QUEUES
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string somestring = Console.ReadLine();
+            Stack<char> someint = new Stack<char>();
+            for (int i = 0; i < somestring.Length; i++)
+            {
+                char currentChar = somestring[i];
+                someint.Push(currentChar);
+            }
+            Console.WriteLine(string.Join("",someint));
+        }
+    }
+}
