@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ADVANCED___STACKS_AND_QUEUES
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string contest = string.Empty;
+            string stringove = Console.ReadLine();
+            Stack<int> symbols = new Stack<int>();
+
+            for (int i = 0; i < stringove.Length; i++)
+            {
+                char currentChar = stringove[i];
+                if ( currentChar == '(')
+                {
+                    symbols.Push(i);
+                }
+
+                else if ( currentChar == ')')
+                {
+                    var openbracketindex = symbols.Pop();
+                     contest = stringove.Substring(openbracketindex, i - openbracketindex + 1);
+                    Console.WriteLine(contest);
+                }
+
+               
+            }
+
+            
+
+
+
+
+
+
+
+
+
+
+
+        }
+    }
+}
