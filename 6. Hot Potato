@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ADVANCED___STACKS_AND_QUEUES
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string[] name = Console.ReadLine().Split();
+            Queue<string> Children = new Queue<string>(name);
+            int numbers = int.Parse(Console.ReadLine());
+            int counter = 1;
+            while(Children.Count>1)
+            {
+
+                var currentChild = Children.Dequeue();
+                if (counter% numbers != 0)
+                {
+                    Children.Enqueue(currentChild);
+                }
+                else
+                {
+                 
+                    Console.WriteLine($"Removed {currentChild}");
+                }
+
+                counter++;
+            }
+
+            Console.WriteLine($"Last is {Children.Peek()}");
+
+
+
+
+
+
+
+
+
+        }
+    }
+}
