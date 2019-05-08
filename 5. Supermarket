@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ADVANCED___STACKS_AND_QUEUES
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            
+            Queue<string> symbols = new Queue<string>();
+            while ( true)
+            {
+                string name = Console.ReadLine();
+                if ( name == "End")
+                {
+                    break;
+                }
+                if ( name == "Paid")
+                {
+
+                    foreach (var item in symbols)
+                    {
+                        Console.WriteLine(item);
+                    }
+
+
+                    symbols.Clear();
+
+
+                }
+                else
+                {
+                    symbols.Enqueue(name);
+                }
+
+
+            }
+            Console.WriteLine($"{symbols.Count} people remaining.");
+
+            
+
+
+
+
+
+
+
+
+
+
+
+        }
+    }
+}
